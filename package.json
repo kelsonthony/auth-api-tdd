@@ -1,0 +1,43 @@
+{
+  "name": "auth-api-tdd",
+  "version": "1.0.0",
+  "description": "auth-api-tdd",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.j --ignore __tests__",
+    "migrationtest": "NODE_ENV=test sequelize migration:create --name=create-users",
+    "pretest": "NODE_ENV=test sequelize db:migrate",
+    "test": "NODE_ENV=test jest",
+    "posttest": "NODE_ENV=test sequelize db:migrate:undo:all",
+    "testprod": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelsonthony/auth-api-tdd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kelsonthony/auth-api-tdd/issues"
+  },
+  "homepage": "https://github.com/kelsonthony/auth-api-tdd#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "factory-girl": "^5.0.4",
+    "faker": "^5.5.3",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.6.0",
+    "sequelize": "^4.42.0"
+  },
+  "devDependencies": {
+    "jest": "^27.0.5",
+    "nodemon": "^2.0.7",
+    "sequelize-cli": "^5.4.0",
+    "sqlite3": "^4.0.6",
+    "supertest": "^6.1.3"
+  }
+}
